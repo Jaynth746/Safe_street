@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Street | AI Road Damage Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-road"></i> Safe Street
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Detect Road Damage with <span class="gradient-text">AI Precision</span></h1>
+            <p>Upload an image of a damaged road, and our advanced AI will analyze the severity and type of damage instantly.</p>
+        </section>
+
+        <section class="upload-container">
+            <div class="drop-zone" id="drop-zone">
+                <div class="icon-container">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+                <h3>Drag & Drop or Click to Upload</h3>
+                <p>Supports: JPG, PNG, WEBP (Max 5MB)</p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+            
+            <div id="preview-container" class="preview-container hidden">
+                <img id="image-preview" src="" alt="Preview">
+                <button id="remove-btn" class="remove-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <button id="analyze-btn" class="cta-btn" disabled>
+                <span class="btn-text">Analyze Road</span>
+                <span class="loader hidden"></span>
+            </button>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+            <div class="card result-card">
+                <h2>Analysis Report</h2>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">Damage Type</span>
+                        <span class="value" id="res-type">--</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Severity</span>
+                        <span class="value severity-badge" id="res-severity">--</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Confidence</span>
+                        <span class="value" id="res-confidence">--</span>
+                    </div>
+                    <div class="result-item full-width">
+                        <span class="label">Description</span>
+                        <p class="value description" id="res-desc">--</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="secondary-btn" onclick="window.print()">Download Report</button>
+                    <button class="secondary-btn" id="reset-btn">Analyze Another</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Safe Street AI. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
