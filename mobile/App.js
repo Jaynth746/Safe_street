@@ -11,7 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 const API_CONFIG = {
   // Base URL for the API
   // Android Emulator uses 10.0.2.2, iOS uses localhost
-  baseUrl: 'http://192.168.1.59:8000',
+  baseUrl: 'ADD_YOUR_IP',
 
   // Endpoint path for image analysis
   endpoint: '/analyze',
