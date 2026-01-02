@@ -64,6 +64,6 @@ def predict_damage(image_path: str):
     return {
         "damage_type": damage_type,
         "severity": severity,
-        "confidence": f"{confidence_score:.2%}",
+        "confidence": confidence_score,
         "summary": summary
     }
